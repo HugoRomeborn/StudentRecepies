@@ -1,16 +1,17 @@
 .header {
     color: aqua;
     display: inline;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .top_bar {
     background-color: rgb(16, 20, 19);
     padding: 2%;
     display: flex;
-    border-radius: 5px;
     justify-content: space-between;
     align-items: center;
+    margin: -8px;
+    width: 98%;
 }
 
 .nav {
@@ -51,7 +52,51 @@
 }
 
 .recept {
-    background-color: bisque;
+    gap: 20px;
+    padding: 40px;
+    justify-content: center;
+    border: 10px;
+    margin: 20px;
+}
+
+.recept_card {
+    display: inline-block;
+    padding: 20px;
+    max-width: 350px;
+    background-color: blue;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.4s;
+}
+
+.card_container {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px;
+}
+
+.recept_titel {
+    margin: 20px;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.4s;
+}
+
+footer {
+    background-color: rgb(16, 20, 19);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    margin: -8px;
 }
 
 @media (max-width: 767px) {
