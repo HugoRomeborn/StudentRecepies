@@ -116,3 +116,7 @@
 .information_text {
     size: 3rem;
 }
+
+#ingredients {
+    font-size: 1.25rem;
+}

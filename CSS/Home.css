@@ -51,34 +51,6 @@
     background-color: blanchedalmond;
 }
 
-.recept {
-    gap: 20px;
-    padding: 40px;
-    justify-content: center;
-    border: 10px;
-    margin: 20px;
-}
-
-.recept_card {
-    display: inline-block;
-    padding: 20px;
-    max-width: 350px;
-    background-color: blue;
-    margin: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: 0.4s;
-    color: black;
-    font-size: 1.25rem;
-}
-
-.card_container {
-    display: flex;
-    text-align: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0px;
-}
 
 .recept_titel {
     margin: 20px;
@@ -98,12 +70,7 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 20px;
-    margin: -10px;
-}
-
-.recept_bild {
-    width: 100%;
-    border-radius: 20px;
+    margin: -8px;
 }
 
 @media (max-width: 767px) {
