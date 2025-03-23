@@ -1,6 +1,12 @@
-.grid-comtainer {
+.grid-container {
     display: grid;
-
+    grid-template-areas:
+        "header header header"
+        "info info info"
+        "main main aside"
+        "footer footer footer";
+    grid-template-columns: 10% 30% 60%;
+    margin: 0px;
 }
 
 .header {
@@ -9,10 +15,11 @@
 }
 
 .top_bar {
+    grid-area: header;
     background-color: rgb(16, 20, 19);
-    padding: 2%;
+    padding: 5%;
+    width: 90%;
     display: flex;
-    border-radius: 5px;
     justify-content: space-between;
     align-items: center;
 }
@@ -54,6 +61,16 @@
     background-color: blanchedalmond;
 }
 
+footer {
+    grid-area: footer;
+    background-color: black;
+    color: red;
+    width: 98%;
+    padding: 1%;
+    text-align: center;
+    margin: 0px;
+}
+
 @media (max-width: 767px) {
     .menu-toggle {
         display: block;
@@ -81,17 +98,27 @@
         width: 100%;
         margin-right: 0;
     }
+
+    .grid-container {
+        grid-template-areas:
+            "header"
+            "info"
+            "main"
+            "aside"
+            "footer";
+        grid-template-columns: 100%;
+    }
 }
 
 .toggle-section {
     display: none;
     padding: 20px;
     border-radius: 10px;
-    width: 70%;
-    max-width: 500px;
-    margin: auto;
+    width: 80%;
+    max-width: 700px;
     text-align: left;
     background-color: bisque;
+    margin-left: 20px;
 }
 
 .toggle-button {
@@ -107,10 +134,13 @@
 }
 
 .information {
+    grid-area: info;
     background-color: azure;
     margin: 40px;
     padding: 20px;
     border: 10px;
+    align-items: center;
+    text-align: center;
 }
 
 .information_text {
@@ -123,4 +153,82 @@
 
 #instructions {
     font-size: 1.25rem;
+}
+
+.right_side {
+    grid-area: aside;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px;
+}
+
+.ingridients {
+    font-size: 1.5rem;
+}
+
+.left_side {
+    grid-area: main;
+    margin: 1%;
+}
+
+.nutrition {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 90%;
+}
+
+.nutrition table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 1.25rem;
+}
+
+.nutrition th,
+.nutrition td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    padding: 12px;
+}
+
+.nutrition th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.aside_img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0px;
+}
+
+
+.recept_bild {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.recept_card {
+    display: inline-block;
+    padding: 20px;
+    max-width: 350px;
+    background-color: blue;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.4s;
+    color: black;
+    font-size: 1.25rem;
+}
+
+.hero_image {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0px;
+    align-self: center;
 }

@@ -8,7 +8,7 @@
     <title>recept</title>
 </head>
 
-<body>
+<body class="grid-container">
     <section class="top_bar">
         <h1 class="header">Recept</h1>
         <button class="menu-toggle">☰</button>
@@ -19,7 +19,6 @@
                 <a href="../recepies.html" class="nav_element">RECEPIES</a>
             </div>
         </nav>
-
     </section>
 
     <section class="information">
@@ -30,65 +29,144 @@
             omnis saepe totam assumenda eius repellat. Atque rem accusamus a nostrum. Veritatis sint consequatur
             tempora, soluta earum quam corrupti!
         </p>
-
     </section>
 
-    <button class="toggle-button active" onclick="showSection('ingredients', this)">Visa Ingridienser</button>
-    <button class="toggle-button" onclick="showSection('instructions', this)">Visa Instruktioner</button>
+    <main class="left_side">
+        <button class="toggle-button active" onclick="showSection('ingredients', this)">Visa Ingridienser</button>
+        <button class="toggle-button" onclick="showSection('instructions', this)">Visa Instruktioner</button>
+        <section id="ingredients" class="toggle-section" style="display: block;">
+            <h1>Ingridienser</h1>
+            <ul class="ingredients">
+                <li>Potatis</li>
+                <li>Morötter</li>
+                <li>Köttfärs</li>
+                <li>Källvatten</li>
+                <li>Galltvål</li>
+                <li>Grönsåpa</li>
+                <li>Barn</li>
+                <li>Levand Höns</li>
+                <li>Trumps smink</li>
+                <li>Musks medicin</li>
+                <li>Putins parfym</li>
+                <li>Enhörningshorn</li>
+                <li>Krossade kristaller</li>
+            </ul>
+        </section>
 
-    <section id="ingredients" class="toggle-section" style="display: block;">
-        <h1>Ingridienser</h1>
-        <ul class="ingredients">
-            <li>Potatis</li>
-            <li>Morötter</li>
-            <li>Köttfärs</li>
-            <li>Källvatten</li>
-            <li>Galltvål</li>
-            <li>Grönsåpa</li>
-            <li>Barn</li>
-            <li>Levand Höns</li>
-            <li>Trumps smink</li>
-            <li>Musks medicin</li>
-            <li>Putins parfym</li>
-            <li>Enhörningshorn</li>
-            <li>Krossade kristaller</li>
-        </ul>
-    </section>
+        <section id="instructions" class="toggle-section">
+            <h1>Instruktioner</h1>
+            <ol>
+                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium omnis earum dolore culpa
+                    incidunt
+                    quia
+                    molestias doloribus id numquam error cum minima, qui, reprehenderit fuga? Deleniti, eaque ratione!
+                    Vero,
+                    repellat.</li>
+                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat consequuntur temporibus ofta.
+                    Possimus
+                    aliquam facilis eum vitae porro dolor rem natus nihil molestiae praesentium magni, dignissimos ullam
+                    sed
+                    temporibus eius.</li>
+                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium omnis earum dolore culpa
+                    incidunt
+                    quia
+                    molestias doloribus id numquam error cum minima, qui, reprehenderit fuga? Deleniti, eaque ratione!
+                    Vero,
+                    repellat.</li>
+                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium omnis earum dolore culpa
+                    incidunt
+                    quia
+                    molestias doloribus id numquam error cum minima, qui, reprehenderit fuga? Deleniti, eaque ratione!
+                    Vero,
+                    repellat.</li>
+                <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium omnis earum dolore culpa
+                    incidunt
+                    quia
+                    molestias doloribus id numquam error cum minima, qui, reprehenderit fuga? Deleniti, eaque ratione!
+                    Vero,
+                    repellat.</li>
+            </ol>
+        </section>
+        <section class="nutrition">
+            <h2>Näringsvärden</h2>
+            <table>
+                <thead class="nutrition_table">
+                    <tr>
+                        <th>Ämne</th>
+                        <th>Mängd</th>
+                        <th>per 100g</th>
+                    </tr>
+                </thead>
+                <tbody class="nutrition_table">
+                    <tr>
+                        <td>Kalorier</td>
+                        <td>200 kcal</td>
+                        <td>100 kcal</td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td>10 g</td>
+                        <td>5 g</td>
+                    </tr>
+                    <tr>
+                        <td>Fett</td>
+                        <td>5 g</td>
+                        <td>2.5 g</td>
+                    </tr>
+                    <tr>
+                        <td>Kolhydrater</td>
+                        <td>30 g</td>
+                        <td>15 g</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
 
-    <section id="instructions" class="toggle-section">
-        <h1>Instruktioner</h1>
-        <ol>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium omnis earum dolore culpa
-                incidunt
-                quia
-                molestias doloribus id numquam error cum minima, qui, reprehenderit fuga? Deleniti, eaque ratione!
-                Vero,
-                repellat.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat consequuntur temporibus saepe.
-                Possimus
-                aliquam facilis eum vitae porro dolor rem natus nihil molestiae praesentium magni, dignissimos ullam
-                sed
-                temporibus eius.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium omnis earum dolore culpa
-                incidunt
-                quia
-                molestias doloribus id numquam error cum minima, qui, reprehenderit fuga? Deleniti, eaque ratione!
-                Vero,
-                repellat.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium omnis earum dolore culpa
-                incidunt
-                quia
-                molestias doloribus id numquam error cum minima, qui, reprehenderit fuga? Deleniti, eaque ratione!
-                Vero,
-                repellat.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium omnis earum dolore culpa
-                incidunt
-                quia
-                molestias doloribus id numquam error cum minima, qui, reprehenderit fuga? Deleniti, eaque ratione!
-                Vero,
-                repellat.</li>
-        </ol>
-    </section>
+    <aside class="right_side">
+        <a href="pesto.html" id="link1">
+            <section class="recept_card">
+                <h2>Valnötspesto</h2>
+                <img class="recept_bild" src="../../IMG/Bild_frukt_bord_unsplash.png" alt="Spagetti">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quasi vero similique ducimus
+                    minima
+                    cupiditate hic ullam. Velit laborum quidem eum quam, dicta ullam nobis nihil veniam deleniti
+                    sint
+                </p>
+            </section>
+        </a>
+        <a href="pesto.html" id="link2">
+            <section class="recept_card">
+                <h2>Valnötspesto</h2>
+                <img class="recept_bild" src="../../IMG/Bild_frukt_bord_unsplash.png" alt="Spagetti">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quasi vero similique ducimus
+                    minima
+                    cupiditate hic ullam. Velit laborum quidem eum quam, dicta ullam nobis nihil veniam deleniti
+                    sint
+                </p>
+            </section>
+        </a>
+        <a href="pesto.html" id="link3">
+            <section class="recept_card">
+                <h2>Valnötspesto</h2>
+                <img class="recept_bild" src="../../IMG/Bild_frukt_bord_unsplash.png" alt="Spagetti">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quasi vero similique ducimus
+                    minima
+                    cupiditate hic ullam. Velit laborum quidem eum quam, dicta ullam nobis nihil veniam deleniti
+                    sint
+                </p>
+            </section>
+        </a>
+    </aside>
+
+    <footer>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit exercitationem rerum soluta, quaerat
+            aut consectetur commodi quae reiciendis incidunt distinctio, quia, non natus alias! Repudiandae facilis
+            voluptatum tempora recusandae magni.</p>
+    </footer>
 
     <script src="../../JS/Recept.js"></script>
 </body>

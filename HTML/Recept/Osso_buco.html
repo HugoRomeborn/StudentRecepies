@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS/Recept_mall.css">
-    <title>recept</title>
+    <title>Osso Buco</title>
 </head>
 
-<body>
-    <section class="top_bar">
+<body class="grid-container">
+    <header class="top_bar">
         <h1 class="header">Recept</h1>
         <button class="menu-toggle">☰</button>
         <nav class="nav">
@@ -19,10 +19,10 @@
                 <a href="../recepies.html" class="nav_element">RECEPIES</a>
             </div>
         </nav>
-
-    </section>
+    </header>
 
     <section class="information">
+        <img class="hero_image" src="../../IMG/Bild_frukt_bord_unsplash.png" alt="">
         <p class="information_text">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque harum autem quae exercitationem magni
             dolores quas? Ipsam aspernatur esse fuga modi voluptatum sit blanditiis porro, possimus laboriosam! Eveniet,
@@ -30,53 +30,134 @@
             omnis saepe totam assumenda eius repellat. Atque rem accusamus a nostrum. Veritatis sint consequatur
             tempora, soluta earum quam corrupti!
         </p>
-
     </section>
 
-    <button class="toggle-button active" onclick="showSection('ingredients', this)">Visa Ingridienser</button>
-    <button class="toggle-button" onclick="showSection('instructions', this)">Visa Instruktioner</button>
+    <main class="left_side">
+        <button class="toggle-button active" onclick="showSection('ingredients', this)">Visa Ingridienser</button>
+        <button class="toggle-button" onclick="showSection('instructions', this)">Visa Instruktioner</button>
+        <section id="ingredients" class="toggle-section" style="display: block;">
+            <h1>Ingridienser</h1>
+            <ul class="ingredients">
+                <li>1,2 kg kalvlägg, skivad med ben</li>
+                <li>125 g smör</li>
+                <li>1 gul lök</li>
+                <li>1 morot (stor)</li>
+                <li>50 g rotselleri</li>
+                <li>2 klyftor vitlök, hackad</li>
+                <li>0,5 dl vetemjöl</li>
+                <li>1 klyfta vitlök, riven</li>
+                <li>1 msk mejram</li>
+                <li>1 burk hela konserverade tomater</li>
+                <li>3 dl torrt vitt vin</li>
+                <li>0,5 dl oxbuljong</li>
+                <li>2 citroner</li>
+                <li>2 krukor färsk bladpersilja</li>
+                <li>salt</li>
+                <li>vitpeppar</li>
+                <li>2 lagerblad</li>
+            </ul>
+        </section>
 
-    <section id="ingredients" class="toggle-section" style="display: block;">
-        <h1>Ingridienser</h1>
-        <ul class="ingredients">
-            <li>1,2 kg kalvlägg, skivad med ben</li>
-            <li>125 g smör</li>
-            <li>1 gul lök</li>
-            <li>1 morot (stor)</li>
-            <li>50 g rotselleri</li>
-            <li>2 klyftor vitlök, hackad</li>
-            <li>0,5 dl vetemjöl</li>
-            <li>1 klyfta vitlök, riven</li>
-            <li>1 msk mejram</li>
-            <li>1 burk hela konserverade tomater</li>
-            <li>3 dl torrt vitt vin</li>
-            <li>0,5 dl oxbuljong</li>
-            <li>2 citroner</li>
-            <li>2 krukor färsk bladpersilja</li>
-            <li>salt</li>
-            <li>vitpeppar</li>
-            <li>2 lagerblad</li>
-        </ul>
-    </section>
+        <section id="instructions" class="toggle-section">
+            <h1>Instruktioner</h1>
+            <ol>
+                <li>Skala och hacka löken fint. Skrapa moroten och skala rotsellerin. Tärna dem smått. Skala och hacka
+                    vitlöken. Pudra
+                    kalvläggen med vetemjöl. Bryn därefter läggen i smör, några skivor åt gången.</li>
+                <li>Smält 75 g smör i en stor gryta. Fräs lök, morot, rotselleri och de hackade vitlöksklyftorna. Häll
+                    på
+                    vinet och låt det
+                    koka in. Tillsätt buljongen, saften av 1/2 citron, mejram och tomater. Krydda med salt och peppar.
+                    Lägg
+                    i köttskivorna.
+                    Låt sjuda i 1-1 1/2 timme eller tills köttet släpper från benen. Riv i den sista vitlöksklyftan. Låt
+                    grytan koka
+                    ytterligare 5 minuter.</li>
+                <li>Gremolata: Tvätta citronerna och riv av det gula skalet. Finhacka persiljan och skär vitlöken smått.
+                    Blanda. Strö
+                    gremolata över den färdiga osso bucon.</li>
+            </ol>
+        </section>
+        <section class="nutrition">
+            <h2>Näringsvärden</h2>
+            <table>
+                <thead class="nutrition_table">
+                    <tr>
+                        <th>Ämne</th>
+                        <th>Mängd</th>
+                        <th>per 100g</th>
+                    </tr>
+                </thead>
+                <tbody class="nutrition_table">
+                    <tr>
+                        <td>Kalorier</td>
+                        <td>200 kcal</td>
+                        <td>100 kcal</td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td>10 g</td>
+                        <td>5 g</td>
+                    </tr>
+                    <tr>
+                        <td>Fett</td>
+                        <td>5 g</td>
+                        <td>2.5 g</td>
+                    </tr>
+                    <tr>
+                        <td>Kolhydrater</td>
+                        <td>30 g</td>
+                        <td>15 g</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
 
-    <section id="instructions" class="toggle-section">
-        <h1>Instruktioner</h1>
-        <ol>
-            <li>Skala och hacka löken fint. Skrapa moroten och skala rotsellerin. Tärna dem smått. Skala och hacka
-                vitlöken. Pudra
-                kalvläggen med vetemjöl. Bryn därefter läggen i smör, några skivor åt gången.</li>
-            <li>Smält 75 g smör i en stor gryta. Fräs lök, morot, rotselleri och de hackade vitlöksklyftorna. Häll på
-                vinet och låt det
-                koka in. Tillsätt buljongen, saften av 1/2 citron, mejram och tomater. Krydda med salt och peppar. Lägg
-                i köttskivorna.
-                Låt sjuda i 1-1 1/2 timme eller tills köttet släpper från benen. Riv i den sista vitlöksklyftan. Låt
-                grytan koka
-                ytterligare 5 minuter.</li>
-            <li>Gremolata: Tvätta citronerna och riv av det gula skalet. Finhacka persiljan och skär vitlöken smått.
-                Blanda. Strö
-                gremolata över den färdiga osso bucon.</li>
-        </ol>
-    </section>
+    <aside class="right_side">
+        <a href="pesto.html" id="link1">
+            <section class="recept_card">
+                <h2>Valnötspesto</h2>
+                <img class="recept_bild" src="../../IMG/Bild_frukt_bord_unsplash.png" alt="Spagetti">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quasi vero similique ducimus
+                    minima
+                    cupiditate hic ullam. Velit laborum quidem eum quam, dicta ullam nobis nihil veniam deleniti
+                    sint
+                </p>
+            </section>
+        </a>
+        <a href="pesto.html" id="link2">
+            <section class="recept_card">
+                <h2>Valnötspesto</h2>
+                <img class="recept_bild" src="../../IMG/Bild_frukt_bord_unsplash.png" alt="Spagetti">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quasi vero similique ducimus
+                    minima
+                    cupiditate hic ullam. Velit laborum quidem eum quam, dicta ullam nobis nihil veniam deleniti
+                    sint
+                </p>
+            </section>
+        </a>
+        <a href="pesto.html" id="link3">
+            <section class="recept_card">
+                <h2>Valnötspesto</h2>
+                <img class="recept_bild" src="../../IMG/Bild_frukt_bord_unsplash.png" alt="Spagetti">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quasi vero similique ducimus
+                    minima
+                    cupiditate hic ullam. Velit laborum quidem eum quam, dicta ullam nobis nihil veniam deleniti
+                    sint
+                </p>
+            </section>
+        </a>
+    </aside>
+
+    <footer>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit exercitationem rerum soluta, quaerat
+            aut consectetur commodi quae reiciendis incidunt distinctio, quia, non natus alias! Repudiandae facilis
+            voluptatum tempora recusandae magni.</p>
+    </footer>
 
     <script src="../../JS/Recept.js"></script>
 </body>
