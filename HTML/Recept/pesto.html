@@ -32,10 +32,12 @@
     </section>
 
     <main class="left_side">
-        <button class="toggle-button active" onclick="showSection('ingredients', this)">Visa Ingridienser</button>
-        <button class="toggle-button" onclick="showSection('instructions', this)">Visa Instruktioner</button>
+        <div class="toggle-buttons">
+            <button class="toggle-button active" onclick="showSection('ingredients', this)">Visa Ingridienser</button>
+            <button class="toggle-button" onclick="showSection('instructions', this)">Visa Instruktioner</button>
+        </div>
         <section id="ingredients" class="toggle-section" style="display: block;">
-            <h1>Ingridienser</h1>
+            <h1>Ingredienser</h1>
             <ul class="ingredients">
                 <li>Potatis</li>
                 <li>Morötter</li>
@@ -55,7 +57,7 @@
 
         <section id="instructions" class="toggle-section">
             <h1>Instruktioner</h1>
-            <ol>
+            <ol class="instructions_list">
                 <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium omnis earum dolore culpa
                     incidunt
                     quia
