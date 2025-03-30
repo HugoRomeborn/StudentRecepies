@@ -56,6 +56,7 @@ body {
 }
 
 .nav_element {
+    text-decoration: none;
     display: inline-block;
     padding: 15px;
     border-radius: 5px;
@@ -63,7 +64,13 @@ body {
     text-align: center;
     flex: 1;
     min-width: 120px;
-    background-color: blanchedalmond;
+    background-color: rgb(104, 176, 20);
+    color: black;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .recept {
@@ -77,7 +84,8 @@ body {
 .recept_card {
     display: inline-block;
     padding: 20px;
-    max-width: 350px;
+    max-width: 60vW;
+    width: 350px;
     background-color: rgb(212, 186, 146);
     margin: 20px;
     border-radius: 20px;
@@ -85,6 +93,7 @@ body {
     transition: 0.4s;
     color: black;
     font-size: 1.25rem;
+
 }
 
 .card_container {
@@ -108,12 +117,13 @@ body {
 }
 
 footer {
+    grid-area: footer;
     background-color: rgb(16, 20, 19);
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 5%;
     margin-top: 20px;
-    margin: 0px;    
+    width: 90%;
 }
 
 .recept_bild {
@@ -137,7 +147,7 @@ footer {
         width: auto;
         padding: 10px;
         border-radius: 5px;
-        background-color: none;
+        background: none;
     }
 
     .nav-links.active {
@@ -150,7 +160,7 @@ footer {
     }
 
     .header {
-        font-size: 5rem;
+        font-size: 3rem;
         font-family: cursive;
     }
 }
