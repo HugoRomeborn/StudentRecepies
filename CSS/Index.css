@@ -1,13 +1,24 @@
 body {
     padding: 0px;
     margin: 0px;
+    grid-template-areas:
+        "header"
+        "info"
+        "news"
+        "footer"
+    ;
+    grid-template-columns: 100%;
 }
 
+
+/*
+    Det här är den Css som i princip finns på alla sidor, det är en header och en footer. Headern innehåller för mobiler en hamburgermeny som är till höger om rubriken. Top-baren har en bakgrundsbild som är en fin bild på matlagning från unsplash och i rubriktexten använder jag mix-blend-mode för att få en snygg rubrik.
+*/
 .header {
     color: rgb(255, 255, 255);
     display: inline;
-    font-size: 7.75rem;
-    mix-blend-mode: difference;
+    font-size: 3rem;
+    mix-blend-mode: difference; /* Den kontrasterar textfärgen mot bakgrundsbilden. för att det enklare skall gå att läsa */
     font-family: cursive;
     line-height: 0.8;
 }
@@ -29,16 +40,19 @@ body {
 .nav {
     display: inline;
     margin-bottom: 34%;
+    gap: 0px;
 }
 
 .nav-links {
-    display: flex;
-    flex-direction: row;
-    position: static;
-    top: 50px;
-    right: 0;
-    width: 100%;
+    display: none;
     align-items: flex-end;
+    flex-direction: column;
+    position: absolute;
+    right: 0%;
+    width: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background: none;
 }
 
 .nav-links.active {
@@ -46,12 +60,14 @@ body {
 }
 
 .menu-toggle {
-    display: none;
+    display: block;
     font-size: 24px;
     cursor: pointer;
     color: white;
     background-color: rgb(104, 176, 20);
-    margin-bottom: 22.5vh;
+    margin-left: auto;
+    position: relative;
+    bottom: 0%;
 }
 
 .nav_element {
@@ -60,60 +76,16 @@ body {
     padding: 15px;
     border-radius: 5px;
     margin-right: 20px;
-    text-align: center;
-    flex: 1;
     min-width: 120px;
     background-color: rgb(104, 176, 20);
     color: black;
+    font-size: rem;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     text-align: center;
     box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
 }
-
-
-.recept_titel {
-    margin: 20px;
-    text-align: left;
-    font-size: 3rem;
-    color: white;
-    background-color: rgb(56, 116, 13);
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: 0.4s;
-}
-
-.recept {
-    gap: 20px;
-    padding: 40px;
-    justify-content: center;
-    border: 10px;
-    margin: 20px;
-}
-
-.recept_card {
-    display: inline-block;
-    padding: 20px;
-    max-width: 350px;
-    background-color: rgb(212, 186, 146);
-    margin: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: 0.4s;
-    color: black;
-    font-size: 1.25rem;
-}
-
-.card_container {
-    display: flex;
-    text-align: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0px;
-}
-
 
 footer {
     grid-area: footer;
@@ -125,13 +97,12 @@ footer {
     width: 90%;
 }
 
-.recept_bild {
-    width: 100%;
-    border-radius: 20px;
-}
 
+/*
+    about us är en text med enkel styling som en box med box-shadow utan en större färgskillnad mot bakgrunden. 
+*/
 .about_us {
-    grid-area: about;
+    grid-area: info;
     background-color: #f9f9f9;
     padding: 20px;
     margin: 20px auto;
@@ -141,27 +112,30 @@ footer {
     text-align: center;
     font-size: 1.25rem;
     color: black;
+    width: 90%;
+}
+
+
+/*
+    Här visas nyheter som cards med en rubrik ock en liten text. Stylat som cards med bara en i bredd för att ge en luftig känsla och white-space
+*/
+.card_container {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px;
 }
 
 .News {
+    grid-area: news;
     background-color: #f9f9f9;
-    /* Ljus bakgrundsfärg */
     padding: 20px;
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Subtil skugga */
     max-width: 800px;
     /* Begränsa bredden */
-}
-
-.section_header {
-    font-size: 2rem;
-    color: #4e8e40;
-    /* Grön accentfärg */
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: bold;
 }
 
 .News div {
@@ -169,9 +143,7 @@ footer {
     padding: 15px;
     border-radius: 10px;
     background-color: #ffffff;
-    /* Vit bakgrund för varje nyhet */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Subtil skugga */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -192,42 +164,50 @@ footer {
 .News p {
     font-size: 1.2rem;
     line-height: 1.6;
-    /* Öka radavstånd för bättre läsbarhet */
     color: #555;
-    /* Mellangrå text */
 }
 
-@media (max-width: 767px) {
+/* 
+    @media queries for responsivitet. Om skärmen är större än 1024px (dator) så kommer dessa stilar att tillämpas. Det kommer då inte att finnas en hamburgermeny utan en vanlig nav-bar brevid headern. Vissa element kommer att ändra storlek och placering för att passa den större skärmen.
+*/
+
+@media (min-width: 1024px) {
+    .header {
+        font-size: 7.5rem;
+        font-family: cursive;
+    }
+
     .menu-toggle {
-        display: block;
-        margin-left: auto;
+        display: none;
     }
 
     .nav-links {
-        display: none;
-        align-items: flex-end;
-        flex-direction: column;
-        position: absolute;
-        top: 100px;
-        right: 8px;
-        width: auto;
-        padding: 10px;
-        border-radius: 5px;
-        background: none;
-    }
-
-    .nav-links.active {
         display: flex;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex-direction: row;
+        position: static;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        align-items: flex-end;
+        background: none;
+        box-shadow: none;
     }
 
     .nav_element {
-        width: 100%;
-        margin-right: 0;
+        width: auto;
+        margin-right: 20px;
     }
 
-    .header {
+    .section_header {
         font-size: 3rem;
-        font-family: cursive;
+    }
+
+    .nav-links {
+        top: 27.5vh;
+        right: 1%;
+    }
+
+    .nav_element {
+        font-size: 1rem;
     }
 }

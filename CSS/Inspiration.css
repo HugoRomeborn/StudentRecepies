@@ -1,17 +1,20 @@
+/* Grundläggande styling för mobila enheter */
 body {
     margin: 0px;
 }
 
+
+/*
+    Det här är den Css som i princip finns på alla sidor, det är en header och en footer. Headern innehåller för mobiler en hamburgermeny som är till höger om rubriken och för datorer syns bara de olika alternativen. Top-baren har en bakgrundsbild som är en fin bild på matlagning från unsplash och i rubriktexten använder jag mix-blend-mode för att få en snygg rubrik.
+*/
 .header {
     color: rgb(255, 255, 255);
     display: inline;
-    font-size: 7.75rem;
-    mix-blend-mode: difference;
+    font-size: 3rem;
+    mix-blend-mode: difference; /* Den kontrasterar textfärgen mot bakgrundsbilden. för att det enklare skall gå att läsa */
     font-family: cursive;
     line-height: 0.8;
 }
-
-
 
 .top_bar {
     grid-area: header;
@@ -30,16 +33,19 @@ body {
 .nav {
     display: inline;
     margin-bottom: 34%;
+    gap: 0px;
 }
 
 .nav-links {
-    display: flex;
-    flex-direction: row;
-    position: static;
-    top: 50px;
-    right: 0;
-    width: 100%;
+    display: none;
     align-items: flex-end;
+    flex-direction: column;
+    position: absolute;
+    right: 0%;
+    width: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background: none;
 }
 
 .nav-links.active {
@@ -47,12 +53,14 @@ body {
 }
 
 .menu-toggle {
-    display: none;
+    display: block;
     font-size: 24px;
     cursor: pointer;
     color: white;
     background-color: rgb(104, 176, 20);
-    margin-bottom: 22.5vh;
+    margin-left: auto;
+    position: relative;
+    bottom: 0%;
 }
 
 .nav_element {
@@ -61,11 +69,10 @@ body {
     padding: 15px;
     border-radius: 5px;
     margin-right: 20px;
-    text-align: center;
-    flex: 1;
     min-width: 120px;
     background-color: rgb(104, 176, 20);
     color: black;
+    font-size: rem;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
@@ -73,6 +80,20 @@ body {
     box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
 }
 
+footer {
+    grid-area: footer;
+    background-color: rgb(16, 20, 19);
+    color: white;
+    text-align: center;
+    padding: 5%;
+    margin-top: 20px;
+    width: 90%;
+}
+
+
+/*
+    Denna kod är för de olika kategorierna med recept som vi har. Den gör framförallt att de cards som är recepten inte wrapar utan att man kan scrolla i sidleds för den specifika raden och att inte hela sidan följer med. Även lite basic styling med färger och shadow för att ge sidan lite djup. 
+*/
 .recept {
     gap: 20px;
     padding: 40px;
@@ -109,83 +130,76 @@ body {
     transition: 0.4s;
 }
 
-footer {
-    grid-area: footer;
-    background-color: rgb(16, 20, 19);
-    color: white;
-    text-align: center;
-    padding: 5%;
-    margin-top: 20px;
-    width: 90%;
-}
-
 .recept_bild {
     width: 100%;
     border-radius: 20px;
 }
 
-@media (max-width: 767px) {
-    .menu-toggle {
-        display: block;
-        margin-left: auto;
-    }
-
-    .nav-links {
-        display: none;
-        align-items: flex-end;
-        flex-direction: column;
-        position: absolute;
-        top: 100px;
-        right: 8px;
-        width: auto;
-        padding: 10px;
-        border-radius: 5px;
-        background: none;
-    }
-
-    .nav-links.active {
-        display: flex;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav_element {
-        width: 100%;
-        margin-right: 0;
-    }
-
-    .header {
-        font-size: 3rem;
-        font-family: cursive;
-    }
-
-    .section_header {
-        font-size: 1rem;
-    }
-}
-
-.section_header {
-    font-size: 3rem;
-    color: white;
-    background-color: rgb(78, 142, 64);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: 0.4s;
-
-}
-
 .card_container {
     display: flex;
     overflow-x: auto;
+    /* Aktivera horisontell scroll */
     white-space: nowrap;
+    /* Förhindra radbrytning */
     gap: 20px;
     padding: 20px;
     scroll-behavior: smooth;
-    margin: -20px;
+    /* Gör scrollningen mjuk */
+}
+
+.card_container::-webkit-scrollbar {
+    display: none;
+    /* Döljer scrollbar */
+}
+
+.section_header {
+    background-color: rgb(104, 176, 20);
+    padding: 20px;
+    border-radius: 20px;
 
 }
 
-.main {
-    gap: 20px;
-    margin: 20px;
+
+/* 
+    @media queries for responsivitet. Om skärmen är större än 1024px (dator) så kommer dessa stilar att tillämpas. Det kommer då inte att finnas en hamburgermeny utan en vanlig nav-bar brevid headern. Vissa element kommer att ändra storlek och placering för att passa den större skärmen.
+*/
+@media (min-width: 1024px) {
+    .header {
+        font-size: 7.5rem;
+        font-family: cursive;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        align-items: flex-end;
+        background: none;
+        box-shadow: none;
+    }
+
+    .nav_element {
+        width: auto;
+        margin-right: 20px;
+    }
+
+    .section_header {
+        font-size: 3rem;
+    }
+
+    .nav-links {
+        top: 27.5vh;
+        right: 1%;
+    }
+
+    .nav_element {
+        font-size: 1rem;
+    }
 }

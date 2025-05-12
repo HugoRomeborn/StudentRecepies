@@ -1,43 +1,64 @@
+/*
+    En grid-container som innehåller grundläggande inställningar för grid-layout men som för mobila enheter bara är top to bottom, ändras däremot för dator
+*/
 .grid-container {
     display: grid;
     grid-template-areas:
-        "header header header"
-        "info info info"
-        "main main aside"
-        "footer footer footer";
-    grid-template-columns: 10% 30% 60%;
+        "header"
+        "info"
+        "main"
+        "aside"
+        "footer";
+    grid-template-columns: 100%;
+
     margin: 0px;
     padding: 0px;
 }
 
+
+/*
+    Det här är den Css som i princip finns på alla sidor, det är en header och en footer. Headern innehåller för mobiler en hamburgermeny som är till höger om rubriken. Top-baren har en bakgrundsbild som är en fin bild på matlagning från unsplash och i rubriktexten använder jag mix-blend-mode för att få en snygg rubrik.
+*/
+
 .header {
-    color: rgb(248, 241, 241);
+    color: rgb(255, 255, 255);
     display: inline;
-    font-size: 4rem;
+    font-size: 3rem;
+    mix-blend-mode: difference; /* Den kontrasterar textfärgen mot bakgrundsbilden. för att det enklare skall gå att läsa */
+    font-family: cursive;
+    line-height: 0.8;
 }
 
 .top_bar {
     grid-area: header;
-    background-color: rgb(69, 165, 21);
-    padding: 3%;
-    width: 94%;
+    background-image: url("../IMG/maarten-van-den-heuvel-EzH46XCDQRY-unsplash.png");
+    background-size: cover;
+    background-position: center;
+    padding: 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0px;
+    width: 86%;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 .nav {
     display: inline;
+    margin-bottom: 34%;
+    gap: 0px;
 }
 
 .nav-links {
-    display: flex;
-    flex-direction: row;
-    position: static;
-    top: 50px;
-    right: 0;
-    width: 100%;
+    display: none;
     align-items: flex-end;
+    flex-direction: column;
+    position: absolute;
+    right: 0%;
+    width: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background: none;
 }
 
 .nav-links.active {
@@ -45,25 +66,31 @@
 }
 
 .menu-toggle {
-    display: none;
+    display: block;
     font-size: 24px;
     cursor: pointer;
     color: white;
-    background-color: black;
+    background-color: rgb(104, 176, 20);
+    margin-left: auto;
+    position: relative;
+    bottom: 0%;
 }
 
 .nav_element {
+    text-decoration: none;
     display: inline-block;
     padding: 15px;
     border-radius: 5px;
     margin-right: 20px;
-    text-align: center;
-    flex: 1;
     min-width: 120px;
-    background-color: blanchedalmond;
-    text-decoration: none;
-    color: rgb(27, 27, 27);
+    background-color: rgb(104, 176, 20);
+    color: black;
+    font-size: rem;
+    font-weight: bold;
     font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -76,43 +103,47 @@ footer {
     width: 90%;
 }
 
-@media (max-width: 767px) {
-    .menu-toggle {
-        display: block;
-        margin-left: auto;
-    }
 
-    .nav-links {
-        display: none;
-        align-items: flex-end;
-        flex-direction: column;
-        position: absolute;
-        top: 100px;
-        right: 8px;
-        width: auto;
-        padding: 10px;
-        border-radius: 5px;
-        background: none;
-    }
+/* Css för delen av sidan där man får information om receptets ursprung och liknande, har valt att ge den en max-width för att det ska se snyggt ut vid stor skärm */
+.information {
+    grid-area: info;
+    margin: 40px;
+    border: 10px;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    max-width: 1000px;
+    justify-self: center;
+}
 
-    .nav-links.active {
-        display: flex;
-    }
+.information_text {
+    font-size: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    padding: 30px;
+    color: #333;
+    margin: 20px 8%;
+    font-weight: bold;
+}
 
-    .nav_element {
-        width: 100%;
-        margin-right: 0;
-    }
+/* Css för hero image*/
+.hero_image {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0px;
+    align-self: center;
+    max-width: 800px;
+}
 
-    .grid-container {
-        grid-template-areas:
-            "header"
-            "info"
-            "main"
-            "aside"
-            "footer";
-        grid-template-columns: 100%;
-    }
+
+/* 
+    Css för receptet, som är en stor del av sidan. Här finns information om ingridienser och instruktioner, bara en visas samtidigt och man hoppar mellan de olika med en knapp högst upp i denna sektionen. 
+*/
+.left_side {
+    grid-area: main;
+    margin: 1%;
 }
 
 .toggle-section {
@@ -138,43 +169,12 @@ footer {
     color: white;
 }
 
-.information {
-    grid-area: info;
-    margin: 40px;
-    border: 10px;
-    align-items: center;
-    text-align: center;
-    margin: 20px;
-    max-width: 1000px;
-    justify-self: center;
-}
-
-.information_text {
-    font-size: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
-    padding: 30px;
-    color: #333;
-    margin: 20px 8%;
-    font-weight: bold;
-}
-
 #ingredients {
     font-size: 1.25rem;
 }
 
 #instructions {
     font-size: 1.25rem;
-}
-
-.right_side {
-    grid-area: aside;
-    display: flex;
-    text-align: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0px;
 }
 
 .ingredients {
@@ -184,11 +184,8 @@ footer {
     line-height: 1.8;
 }
 
-.left_side {
-    grid-area: main;
-    margin: 1%;
-}
 
+/* Css för näringsinformation långt ner på sidan, en tabell för olika viktiga näringsämnen. */
 .nutrition {
     padding: 20px;
     border-radius: 10px;
@@ -216,17 +213,15 @@ footer {
     text-align: left;
 }
 
-.aside_img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+
+/* Css för länkarna till de andra recepten. Om en mobil används kommer dessa visas allra längst ner men om en dator används visas de till höger om receptet */
+.right_side {
+    grid-area: aside;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 0px;
-}
-
-
-.recept_bild {
-    width: 100%;
-    border-radius: 20px;
 }
 
 .recept_card {
@@ -242,14 +237,12 @@ footer {
     font-size: 1.25rem;
 }
 
-.hero_image {
-    width: 80%;
-    height: auto;
-    border-radius: 10px;
-    margin: 0px;
-    align-self: center;
-    max-width: 800px;
+.recept_bild {
+    width: 100%;
+    border-radius: 20px;
 }
+
+
 
 .instructions_list {
     gap: 3rem;
@@ -260,6 +253,67 @@ footer {
     margin: 30px;
 }
 
+/* Förstorar punkterna i listan */
 ul>li::marker {
     font-size: 1.75rem;
+}
+
+/* 
+    @media queries for responsivitet. Om skärmen är större än 1024px (dator) så kommer dessa stilar att tillämpas. Det kommer då inte att finnas en hamburgermeny utan en vanlig nav-bar brevid headern. Vissa element kommer att ändra storlek och placering för att passa den större skärmen.
+    Det kommer även att finnas en grid-layout för sidan där headern, informationen, receptet och footern kommer att placeras i olika rutor.
+*/
+@media (min-width: 1024px) {
+    .header {
+        font-size: 7.5rem;
+        font-family: cursive;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        align-items: flex-end;
+        background: none;
+        box-shadow: none;
+    }
+
+    .nav_element {
+        width: auto;
+        margin-right: 20px;
+    }
+
+    .section_header {
+        font-size: 3rem;
+    }
+
+    .nav-links {
+        top: 27.5vh;
+        right: 1%;
+    }
+
+    .nav_element {
+        font-size: 1rem;
+    }
+
+    .grid-container {
+        grid-template-areas:
+            "header header header"
+            "info info info"
+            "main main aside"
+            "footer footer footer";
+        grid-template-columns: 10% 30% 60%;
+    }
+
+    .information_text {
+        font-size: 1.5rem;
+        padding: 50px;
+        margin: 20px 8%;
+    }
 }

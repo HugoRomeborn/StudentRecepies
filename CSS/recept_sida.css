@@ -2,13 +2,23 @@ body {
     padding: 0px;
     justify-content: center;
     margin: 0px;
+    grid-template-areas:
+        "header"
+        "recepies"
+        "footer"
+    ;
+    grid-template-columns: 100%;
 }
+
+/*
+    Det här är den Css som i princip finns på alla sidor, det är en header och en footer. Headern innehåller för mobiler en hamburgermeny som är till höger om rubriken. Top-baren har en bakgrundsbild som är en fin bild på matlagning från unsplash och i rubriktexten använder jag mix-blend-mode för att få en snygg rubrik.
+*/
 
 .header {
     color: rgb(255, 255, 255);
     display: inline;
-    font-size: 7.75rem;
-    mix-blend-mode: difference;
+    font-size: 3rem;
+    mix-blend-mode: difference; /* Den kontrasterar textfärgen mot bakgrundsbilden. för att det enklare skall gå att läsa */
     font-family: cursive;
     line-height: 0.8;
 }
@@ -30,16 +40,19 @@ body {
 .nav {
     display: inline;
     margin-bottom: 34%;
+    gap: 0px;
 }
 
 .nav-links {
-    display: flex;
-    flex-direction: row;
-    position: static;
-    top: 50px;
-    right: 0;
-    width: 100%;
+    display: none;
     align-items: flex-end;
+    flex-direction: column;
+    position: absolute;
+    right: 0%;
+    width: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background: none;
 }
 
 .nav-links.active {
@@ -47,12 +60,14 @@ body {
 }
 
 .menu-toggle {
-    display: none;
+    display: block;
     font-size: 24px;
     cursor: pointer;
     color: white;
     background-color: rgb(104, 176, 20);
-    margin-bottom: 22.5vh;
+    margin-left: auto;
+    position: relative;
+    bottom: 0%;
 }
 
 .nav_element {
@@ -61,11 +76,10 @@ body {
     padding: 15px;
     border-radius: 5px;
     margin-right: 20px;
-    text-align: center;
-    flex: 1;
     min-width: 120px;
     background-color: rgb(104, 176, 20);
     color: black;
+    font-size: rem;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
@@ -73,10 +87,15 @@ body {
     box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.1);
 }
 
+
+/*
+    Denna Css stylar huvuddelen av sidan som består av flex-cards som bara wrappar runt kanten om det finns ont om utrymme. Cards har en shadow och border-radius för att skapa en illusion av djup i sidan
+*/
 .recept {
+    grid-area: recept;
     gap: 20px;
     padding: 40px;
-    justify-content: center;
+    justify-content: center; /* Centrerar innehållet */
     border: 10px;
     margin: 20px;
 }
@@ -131,36 +150,43 @@ footer {
     border-radius: 20px;
 }
 
-@media (max-width: 767px) {
+
+/* 
+    @media queries for responsivitet. Om skärmen är större än 1024px (dator) så kommer dessa stilar att tillämpas. Det kommer då inte att finnas en hamburgermeny utan en vanlig nav-bar brevid headern. Vissa element kommer att ändra storlek och placering för att passa den större skärmen.
+*/
+@media (min-width: 1024px) {
+    .header {
+        font-size: 7.5rem;
+        font-family: cursive;
+    }
+
     .menu-toggle {
-        display: block;
-        margin-left: auto;
+        display: none;
     }
 
     .nav-links {
-        display: none;
-        align-items: flex-end;
-        flex-direction: column;
-        position: absolute;
-        top: 100px;
-        right: 8px;
-        width: auto;
-        padding: 10px;
-        border-radius: 5px;
-        background: none;
-    }
-
-    .nav-links.active {
         display: flex;
+        flex-direction: row;
+        position: static;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        align-items: flex-end;
+        background: none;
+        box-shadow: none;
     }
 
     .nav_element {
-        width: 100%;
-        margin-right: 0;
+        width: auto;
+        margin-right: 20px;
     }
 
-    .header {
-        font-size: 3rem;
-        font-family: cursive;
+    .nav-links {
+        top: 27.5vh;
+        right: 1%;
+    }
+
+    .nav_element {
+        font-size: 1rem;
     }
 }

@@ -9,20 +9,24 @@
 </head>
 
 <body class="grid-container">
+
+    <!-- Detta är headern och den har kombinerat rubrik och navbar -->
     <section class="top_bar">
         <div class="header_container">
             <h1 class="header">Recept</h1>
-            <button class="menu-toggle">☰</button>
             <nav class="nav">
+                <button class="menu-toggle">☰</button>
                 <div class="nav-links">
-                <a href="Index.html" class="nav_element">HEM</a>
+                    <a href="../Index.html" class="nav_element">HEM</a>
                     <a href="../Inspiration.html" class="nav_element">INSPIRATION</a>
-                <a href="../recepies.html" class="nav_element">RECEPT</a>
+                    <a href="../recepies.html" class="nav_element">RECEPT</a>
                 </div>
             </nav>
         </div>
     </section>
 
+
+    <!-- Information om receptets ursprung och ibland lite kul trivia. innehåller även en hero-image på den färdiga rätten hur det ska se ut -->
     <div class="information">
         <p class="information_text">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque harum autem quae exercitationem magni
@@ -33,7 +37,11 @@
         </p>
     </div>
 
+
+    <!-- Den här sektionen innehåller ingridienser och instruktioner och man får välja vilken man vill se med hjälp av en knapp. -->
     <main class="left_side">
+
+        <!-- Knapp som kallar på en funktion som väljer vilken sektion som skall visas av ingridienserna och instruktionerna -->
         <div class="toggle-buttons">
             <button class="toggle-button active" onclick="showSection('ingredients', this)">Visa Ingridienser</button>
             <button class="toggle-button" onclick="showSection('instructions', this)">Visa Instruktioner</button>
@@ -91,6 +99,9 @@
                     repellat.</li>
             </ol>
         </section>
+
+
+        <!-- En näringsvärdestabell som använder det inbyggda tabell-elementen och jag har bara stylat detaljerna med CSS -->
         <section class="nutrition">
             <h2>Näringsvärden</h2>
             <table>
@@ -127,6 +138,8 @@
         </section>
     </main>
 
+
+    <!-- Här finns förslag på andra recept man kan göra en annan gång som lite inspiration -->
     <aside class="right_side">
         <a href="pesto.html" id="link1">
             <section class="recept_card">

@@ -9,18 +9,22 @@
 </head>
 
 <body class="grid-container">
+
+    <!-- Detta är headern och den har kombinerat rubrik och navbar -->
     <header class="top_bar">
         <h1 class="header">Osso buco</h1>
-        <button class="menu-toggle">☰</button>
         <nav class="nav">
+            <button class="menu-toggle">☰</button>
             <div class="nav-links">
-                <a href="Index.html" class="nav_element">HEM</a>
+                <a href="../Index.html" class="nav_element">HEM</a>
                 <a href="../Inspiration.html" class="nav_element">INSPIRATION</a>
                 <a href="../recepies.html" class="nav_element">RECEPT</a>
             </div>
         </nav>
     </header>
 
+
+    <!-- Information om receptets ursprung och ibland lite kul trivia. innehåller även en hero-image på den färdiga rätten hur det ska se ut -->
     <div class="information">
         <img class="hero_image" src="../../IMG/osso-buco-meat-calf-veal-77e72294cf16e201750890b9c5eabc1b.png"
             alt="Bild på ossobuco">
@@ -39,7 +43,11 @@
         </p>
     </div>
 
+
+    <!-- Den här sektionen innehåller ingridienser och instruktioner och man får välja vilken man vill se med hjälp av en knapp. -->
     <main class="left_side">
+
+        <!-- Knapp som kallar på en funktion som väljer vilken sektion som skall visas av ingridienserna och instruktionerna -->
         <div class="toggle-buttons">
             <button class="toggle-button active" onclick="showSection('ingredients', this)">Visa
                 Ingridienser</button>
@@ -93,6 +101,9 @@
                     gremolata över den färdiga osso bucon.</li>
             </ol>
         </section>
+
+
+        <!-- En näringsvärdestabell som använder det inbyggda tabell-elementen och jag har bara stylat detaljerna med CSS -->
         <section class="nutrition">
             <h2>Näringsvärden</h2>
             <table>
@@ -129,6 +140,8 @@
         </section>
     </main>
 
+
+    <!-- Här finns förslag på andra recept man kan göra en annan gång som lite inspiration -->
     <aside class="right_side">
         <a href="pesto.html" id="link1">
             <section class="recept_card">
